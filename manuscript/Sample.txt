@@ -1,6 +1,5 @@
-introduction.txt
+chapter1.txt
 
-scenario1.txt
-scenario2.txt
+chapter2.txt
 
-conclusion.txt
+chapter3.txt
