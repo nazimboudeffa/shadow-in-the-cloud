@@ -1,0 +1,4 @@
+# Introduction
+
+Ce livre est un ensemble de scénarios où le personnage principal est Shadow, un hacker du cyberespace 
+qui est sous sa couverture de freelance en faisant des missions de développement web sur internet
