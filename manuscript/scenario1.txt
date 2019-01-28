@@ -1,3 +1,59 @@
 # Scénario 1
 
 Le scénario 1 est tout simplement le jour où Shadow a découvert BlackBuntu et qui l'a téléchargé
+
+TÉLÉCHARGEMENT ET INSTALLATION
+
+Avant toute chose, téléchargez la dernière version ISO de BlackBuntu, pour PC, portables. La dernière version inclut tous les outils de pentest et sécurité listé ci-dessus.
+
+Ce dont vous aurez besoin
+
+    Une copie vérifiée de l’image ISO appropriée de la dernière version de BlackBuntu pour votre système.
+    Si vous utilisez Windows, vous aurez besoin aussi de télécharger Win32 Disk Imager. Pour Linux vous pouvez utiliser la commande dd.
+    Une clé USB, de 4 Go ou plus. (Les systèmes équipé d’un lecteur de carte SD peuvent l’utiliser si il le font avec une carte d’une capacité similaire ou supérieur. La procédure reste identique).
+
+Création d’une clé USB bootable de BlackBuntu sous Windows
+
+    Insérez votre clé USB dans un port USB disponible sur votre PC Windows, notez la lettre attribué au lecteur de disque utilisé (exemple : “F:\”), une fois prêt lancez Win32 Disk Imager.
+    Choisissez le fichier ISO Linux BlackBuntu à graver et vérifiez que le lecteur USB sélectionner est le bon. Cliquez ensuite sur le bouton “Write”.
+    Une fois le gravage terminé, éjectez soigneusement la clé USB de votre machine Windows. Vous pouvez maintenant utiliser ce périphérique USB pour démarrer votre machine sur Linux BlackBuntu.
+
+Création d’une clé USB bootable de BlackBuntu sous Linux
+
+La création d’une clé USB bootable de Linux BlackBuntu Linux sur un environnement Linux est très simple à réaliser. Une fois que vous avez téléchargé et vérifié votre fichier ISO BlackBuntu, vous pouvez utiliser la commande dd pour le graver sur votre clé USB en suivant la procédure décrite ci-dessous. Notez que vous devrez exécuter chaque commande en root, ou exécuter la commande dd avec sudo. En fonction de la distribution que vous utilisez, quelques détails peuvent varier légèrement, mais l’idée générale reste la même.
+
+Tout d’abord, vous devrez identifier le chemin du périphérique à utiliser pour graver l’image sur votre clé USB. Pour cela, il suffit d’exécuter la commande ci-dessous sans insérer la clé USB :
+$ sudo fdisk -l
+
+Vous obtiendrez une réponse similaire à celle présente sur les impressions d’ecran ci-dessous, affichant les différents lecteur disponible “/dev/sda”, et les partitions qu’elles contiennent (“/dev/sda1”, “/dev/sda2”, et “/dev/sda5”).
+
+Maintenant, insérez votre clé USB dans un port USB disponible sur votre système, et exécutez la même commande, “sudo fdisk -l” une deuxième fois. Vous obtiendrez une réponse similaire à la première mais indiquant cette fois-ci un périphérique supplémentaire qui n’était pas présent auparavant, dans cet exemple “/dev/sdb”, un disque USB de 16 GO :
+
+Continuez à graver l’image du fichier ISO BlackBuntu sur le périphérique USB. L’exemple de commande ci-dessous suppose que l’image ISO que vous souhaitez graver est nommée “blackbuntu-1.0.0-20190105-1-amd64.iso” et se trouve dans votre répertoire de travail actuel. Le paramètre blocksize peut être augmenté, et bien qu’il puisse accélérer le fonctionnement de la commande dd, il peut occasionnellement produire des clés USB non bootable, en fonction de votre système et de nombreux autres facteurs. La valeur recommandée, “bs=1M”, est conservatrice et fiable.
+$ sudo dd if=blackbuntu-1.0.0-20190105-1-amd64.iso of=/dev/sdb bs=1M && sync
+
+La gravage de la clé USB peut prendre énormement de temps, plus de dix minutes ou plus ne sont pas inhabituelles, comme le montre l’exemple ci-dessous. Alors soyez patient ou allez prendre une tasse de café.
+
+De plus, vous devez savoir que la commande dd ne fournit aucun retour durant le processus et ce jusqu’à ce que le gravage soit terminé, si votre lecteur possède un indicateur d’accès, vous le verrez probablement clignoter de temps en temps. Le temps nécessaire au gravage de l’image ISO dépend de la vitesse du système utilisé, de la clé USB elle-même et du port USB dans lequel elle est insérée. Une fois que dd aura fini de graver l’image ISO, vous obtiendrez une réponse similaire à celle indiquée ci-dessous :
+3227+0 records in
+3227+0 records out
+3383754752 bytes (3,4 GB, 3,2 GiB) copied, 1,73162 s, 2,0 GB/s
+
+Essayer BlackBuntu
+
+Exécuter BlackBuntu directement à partir d’une clé USB ou d’un DVD est un moyen simple et rapide de vous familiariser avec Linux BlackBuntu et voir comment fonctionne t’il sur votre matériel. Le plus important c’est qu’il ne modifie en aucune façon la configuration de votre ordinateur, et un simple redémarrage sans la clé USB ou le DVD vous permettra de retourner sur votre machine avec votre système d’exploitation actuel.
+
+Avec la version Live de BlackBuntu, vous pouvez faire presque tout ce que la version installer sur votre disque dur vous permettrez de faire :
+
+    Naviguez en toute sécurité sur Internet sans stocker d’historique ou de données de cookie.
+    Accéder et éditer les fichiers stockés sur votre ordinateur ou votre clé USB.
+    Corrigez d’eventuelles problèmes de configuration et redémarrer votre machine.
+    Utilisez absolument tous les outils de pentest et de cybersécurité installés.
+
+Après avoir inséré votre clé USB ou votre DVD, sélectionnez simplement “Try BlackBuntu” pour démarrer la version Live. Après quelques secondes, votre machine va automatiquement éxecuter le contenu de votre image et démarrer la version Live de Linux BlackBuntu.
+
+Installer BlackBuntu
+
+Installer BlackBuntu à partir d’une clé USB ou d’un DVD est facile que de compter 1,2 et 3. Pour aller plus loin, nous vous invitons à regarder la vidéos ci-dessous qui décrit étape par étape le processus d’installation. Au cours du processus d’installation, vous pouvez choisir de télécharger les dernières mise à jour, auquel cas une connexion Internet sera nécessaire.
+
+Après avoir inséré votre clé USB ou votre DVD, sélectionnez simplement “Install BlackBuntu” afin d’initialiser l’installation. Après quelques secondes, votre machine va automatiquement démarrez le processus d’installation de Linux BlackBuntu.
