@@ -1,6 +1,4 @@
 introduction.txt
-
 scenario1.txt
 scenario2.txt
-
 conclusion.txt
